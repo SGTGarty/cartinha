@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Dia das Mães</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      font-size: 1.4em;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    .typing {
+      white-space: pre-wrap;
+      border-right: 2px solid #fff;
+      animation: blink 0.7s steps(1) infinite;
+    }
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div id="mensagem" class="typing"></div>
+
+  <script>
+    const texto = `Oi mãe,
+
+Hoje é Dia das Mães, mas na verdade, todo dia é seu dia. Porque todos os dias você cuida, apoia, se preocupa, dá risada, briga quando precisa e ama sem medida.
+
+Eu sei que nem sempre consigo demonstrar tudo que eu sinto. Às vezes falo pouco, fico no meu canto, ou até pareço distante… Mas por dentro, eu sou cheio de gratidão por tudo que você faz — e fez — por mim.
+
+Você é o coração da nossa casa. A pessoa que sempre pensa nos outros antes de pensar em si mesma. E mesmo quando as coisas não são fáceis, você continua firme, forte, e com um sorriso no rosto. Eu admiro isso mais do que consigo dizer.
+
+Eu não tenho presente caro, nem nada brilhante pra te dar… Mas tenho o que importa: meu amor, minha admiração e o desejo de te ver feliz sempre.
+
+Obrigado por ser quem você é. Por tudo.
+
+Te amo demais, mãe. Feliz Dia das Mães. 💐
+
+Com amor,  
+João`;
+
+    let i = 0;
+    function digitar() {
+      if (i < texto.length) {
+        document.getElementById("mensagem").innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(digitar, 30); // velocidade da digitação
+      }
+    }
+    window.onload = digitar;
+  </script>
+</body>
+</html>
+
